@@ -119,6 +119,7 @@ class accountsController extends http\controller
         //        $record = accounts::findUser($_POST['email']);
 
         $user = accounts::findUserbyEmail($_REQUEST['email']);
+        //print_r($user);
 
 
         if ($user == FALSE) {

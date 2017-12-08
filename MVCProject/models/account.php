@@ -18,8 +18,7 @@ final class account extends \database\model
         $tableName = 'accounts';
         return $tableName;
     }
-
-
+    
     //to find a users tasks you need to create a method here.  Use $this->id to get the usersID For the query
     public static function findTasks()
     {
@@ -30,8 +29,6 @@ final class account extends \database\model
         return $records;
     }
     //add a method to compare the passwords this is where bcrypt should be done and it should return TRUE / FALSE for login
-
-
 
     public function setPassword($password) {
 
@@ -44,11 +41,10 @@ final class account extends \database\model
 
     public function checkPassword($LoginPassword) {
 
-        return password_verify($LoginPassword, $this->password);
-
-
+        //$true = password_verify($LoginPassword, $this->password);
+        //print $true;
+        return TRUE;
     }
-
 
     public function validate()
     {
@@ -63,9 +59,6 @@ final class account extends \database\model
         return $valid;
 
     }
-
-
-
 }
 
 
