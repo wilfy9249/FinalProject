@@ -119,7 +119,9 @@ class accountsController extends http\controller
         //        $record = accounts::findUser($_POST['email']);
 
         $user = accounts::findUserbyEmail($_REQUEST['email']);
-        //print_r($user);
+        print_r($user);
+        $tasks = accounts::findTasksbyID($_REQUEST['ownerid']);
+        print_r($tasks);
 
 
         if ($user == FALSE) {
@@ -138,12 +140,6 @@ class accountsController extends http\controller
             } else {
                 echo 'password does not match';
             }
-
         }
-
-
-
-
     }
-
 }

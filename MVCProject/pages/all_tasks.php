@@ -17,12 +17,12 @@
 
 <body>
 
+<h1>The list of Tasks of the user</h1>
+
+
 <?php
 //this is how you print something
-
 print utility\htmlTable::genarateTableFromMultiArray($data);
-
-
 ?>
 
 
