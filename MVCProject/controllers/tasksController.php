@@ -99,28 +99,8 @@ class tasksController extends http\controller
         } else {
 
             if($user->checkPassword($_POST['password']) == TRUE) {
-
-                //echo 'login';
-
                 session_start();
                 $_SESSION["userID"] = $user->id;
-
-                //forward the user to the show all todos page
-                //print_r($_SESSION);
-
-                $records = todos::findAll();
-                session_start();
-                if(key_exists('userID',$_SESSION)) {
-                    $userID = $_SESSION['userID'];
-                } else {
-
-                    echo 'you must be logged in to view tasks';
-                }
-                $userID = $_SESSION['userID'];
-
-                $records = todos::findTasksbyID($userID);
-                self::getTemplate('all_tasks', $records);
-
                 header("Location: index.php?page=tasks&action=all");
             } else {
                 echo 'password does not match';
