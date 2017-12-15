@@ -28,13 +28,13 @@ class routes
         //this is the index.php route for POST
 
         //This is an examole of the post for index
-        $route = new route();
-        $route->http_method = 'POST';
-        $route->action = 'create';
-        $route->page = 'homepage';
-        $route->controller = 'homepageController';
-        $route->method = 'create';
-        $routes[] = $route;
+        //$route = new route();
+        //$route->http_method = 'POST';
+        //$route->action = 'create';
+        //$route->page = 'homepage';
+        //$route->controller = 'homepageController';
+        //$route->method = 'create';
+        //$routes[] = $route;
 
         //This is an examole of the post for tasks to show a task
         //GET METHOD index.php?page=tasks&action=show
@@ -155,7 +155,6 @@ class routes
         $route->controller = 'tasksController';
         $route->method = 'insertButton';
         $routes[] = $route;
-        return $routes;
 
         $route = new route();
         $route->http_method = 'POST';
@@ -164,6 +163,7 @@ class routes
         $route->controller = 'tasksController';
         $route->method = 'store';
         $routes[] = $route;
+
         return $routes;
     }
 

@@ -35,22 +35,6 @@ class tasksController extends http\controller
 
     //you should check the notes on the project posted in moodle for how to use active record here
 
-    public static function create()
-    {
-        $user = new todo();
-        $user->owneremail = $_POST['owneremail'];
-        $user->ownerid = $_POST['ownerid'];
-        $user->createddate = $_POST['createddate'];
-        $user->duedate = $_POST['duedate'];
-        $user->message = $_POST['message'];
-        $user->isdone = $_POST['isdone'];
-        $user->save();
-        //self::getTemplate('all_tasks', $user);
-        $userID = $_SESSION['userID'];
-        header("Location: index.php?page=tasks&action=all&id=".$userID);
-        print_r($_POST);
-    }
-
     public static function insertButton()
     {
         self::getTemplate('create_tasks');
@@ -68,24 +52,18 @@ class tasksController extends http\controller
     //this would be for the post for sending the task edit form
     public static function store()
     {
-        session_start();
-        $userID = $_SESSION['userID'];
-        //$record = todos::findOne($_REQUEST['id']);
-        //$record->body = $_REQUEST['body'];
-        $record = new todo();
-        $record->owneremail = $_POST['owneremail'];
-        $record->ownerid = $_SESSION['userID'];
-        $record->createddate = $_POST['createddate'];
-        $record->duedate = $_POST['duedate'];
-        $record->message = $_POST['message'];
-        $record->isdone = $_POST['isdone'];
-        $record->save();
+        $task = new todo();
+        $task->owneremail = $_POST['owneremail'];
+        print $_POST['owneremail'];
+        $task->ownerid = $_POST['ownerid'];
+        $task->createddate = $_POST['createddate'];
+        $task->duedate = $_POST['duedate'];
+        $task->message = $_POST['message'];
+        $task->isdone = $_POST['isdone'];
+        $task->save();
         //self::getTemplate('all_tasks', $user);
 
-        header("Location: index.php?page=tasks&action=all&id=".$userID);
-        //$record->save();
-        //print_r($_POST);
-
+        header("Location: index.php?page=tasks&action=all");
     }
 
     public static function save() {

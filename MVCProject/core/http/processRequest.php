@@ -42,25 +42,35 @@ class processRequest
         //this is a helper function that needs to be improved because it does too much.  I will look for this in grading
 
         $request_method = request::getRequestMethod();
+        //print_r ($request_method);
+        //echo('br');
         $page = request::getPage();
+        //print_r ($page);
+        //echo('br');
         $action = request::getAction();
+        //print_r ($action);
+        //echo('br');
 
         //these are helpful for figuring out the action and method being requested
-        //echo 'Action: ' . $action . '</br>';
-        //echo 'Page: ' . $page . '</br>';
-        //echo 'Request Method: ' . $request_method . '</br>';
+         //echo 'Action: ' . $action . '</br>';
+         //echo 'Page: ' . $page . '</br>';
+         //echo 'Request Method: ' . $request_method . '</br></br></br>';
 
         //this gets the routes objects, you need to add routes to add pages and follow the template of the route specified
         $routes = \routes::getRoutes();
+        //print_r($routes);
         $foundRoute = NULL;
         //this figures out which route matches the page being requested in the URL and returns it so that the controller and method can be called
         foreach ($routes as $route) {
 
             if ($route->page == $page && $route->http_method == $request_method && $route->action == $action) {
                 $foundRoute = $route;
+                //print_r($foundRoute);
                 break;
             }
         }
+
+        //print_r($foundRoute);
         if (is_null($foundRoute)) {
             controller::getTemplate('notfound');
             exit;
