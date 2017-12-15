@@ -18,12 +18,19 @@
 <body>
 
 <h1>The list of Tasks of the user</h1>
+<br>
 
+
+<a href="index.php?page=tasks&action=create">Insert Record</a>
+
+<br><br>
 
 <?php
 //this is how you print something
 print utility\htmlTable::genarateTableFromMultiArray($data);
+
 ?>
+
 
 
 <script src="js/scripts.js"></script>
