@@ -7,7 +7,7 @@ class htmlTable
 {
     public static function genarateTableFromMultiArray($array)
     {
-
+        if($array!= null) {
         $tableGen = '<table border="1"cellpadding="10">';
         $tableGen .= '<tr>';
         //this grabs the first element of the array so we can extract the field headings for the table
@@ -20,21 +20,31 @@ class htmlTable
             $tableGen .= '<th>' . $heading . '</th>';
         }
         $tableGen .= '</tr>';
-        foreach ($array as $record) {
-            $tableGen .= '<tr>';
-            foreach ($record as $key => $value) {
-                if ($key == 'id') {
-                    $tableGen .= '<td><a href="index.php?page=' . $referingPage . '&action=show&id=' . $value . '">View</a></td>';
-                } else {
-                    $tableGen .= '<td>' . $value . '</td>';
+
+
+
+            foreach ($array as $record) {
+                $tableGen .= '<tr>';
+                foreach ($record as $key => $value) {
+                    if ($key == 'id') {
+                        $tableGen .= '<td><a href="index.php?page=' . $referingPage . '&action=show&id=' . $value . '">View</a></td>';
+                    } else {
+                        $tableGen .= '<td>' . $value . '</td>';
+                    }
                 }
+                $tableGen .= '</tr>';
             }
-            $tableGen .= '</tr>';
+
+            $tableGen .= '</table>';
+            return $tableGen;
+        }
+        else{
+
+            $text = 'No Records present.Please Insert the records';
+            print $text;
+            //$tableGen = null;
         }
 
-        $tableGen .= '</table>';
-
-        return $tableGen;
     }
 
     public static function generateTableFromOneRecord($innerArray)

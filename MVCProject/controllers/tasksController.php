@@ -50,7 +50,8 @@ class tasksController extends http\controller
     public static function edit()
     {
         $task = new todo();
-        $task->id = $_GET['id'];
+        $task->owneremail = $_POST['owneremail'];
+        $task->ownerid = $_POST['ownerid'];
         $task->createddate = $_POST['createddate'];
         $task->duedate = $_POST['duedate'];
         $task->message = $_POST['message'];
@@ -65,14 +66,16 @@ class tasksController extends http\controller
     public static function store()
     {
         $task = new todo();
-        $task->owneremail = $_POST['owneremail'];
-        //print $_POST['owneremail'];
+
+        $task->ownerid = $_POST['owneremail'];
         $task->ownerid = $_POST['ownerid'];
         $task->createddate = $_POST['createddate'];
         $task->duedate = $_POST['duedate'];
         $task->message = $_POST['message'];
         $task->isdone = $_POST['isdone'];
+
         $task->save();
+        //print_r($task);
         //self::getTemplate('all_tasks', $user);
 
         header("Location: index.php?page=tasks&action=all");
@@ -94,8 +97,7 @@ class tasksController extends http\controller
     {
         $record = todos::findOne($_REQUEST['id']);
         $record->delete();
-        print_r($_POST);
-
+        header("Location: index.php?page=tasks&action=all");
     }
 
     public static function login()
