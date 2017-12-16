@@ -41,11 +41,8 @@ abstract class model
 
         }
 
-
         return $this->id;
         }
-
-
 
     private function insert()
     {
