@@ -42,17 +42,15 @@ class tasksController extends http\controller
 
     public static function editTasks()
     {
-        //$record = todos::findOne($_GET['id']);
-        self::getTemplate('edit_task');
+        $record = todos::findOne($_REQUEST['id']);
+        self::getTemplate('edit_task',$record);
     }
 
     //this is the function to view edit record form
     public static function edit()
     {
         $task = new todo();
-        $task->owneremail = $_POST['owneremail'];
-        //print $_POST['owneremail'];
-        $task->ownerid = $_GET['id'];
+        $task->id = $_GET['id'];
         $task->createddate = $_POST['createddate'];
         $task->duedate = $_POST['duedate'];
         $task->message = $_POST['message'];

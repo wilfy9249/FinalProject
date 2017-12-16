@@ -20,20 +20,15 @@
 <body>
 
         <div class="container">
-            <form action="index.php?page=tasks&action=edit" method="post">
+            <form action="index.php?page=tasks&action=edit&id=<?php echo $data->id; ?>" method="post">
 
-
+                <label ><b>ID: <?php echo $_GET['id']; ?></b></label><br>
 
                 <input type="datetime" placeholder="Created Date" name="createddate"><br>
 
-
                 <input type="datetime" placeholder="Due Date" name="duedate"><br>
 
-
                 <input type="text" placeholder="Message" name="message"><br>
-
-
-                <input type="number" placeholder="Is Done" name="isdone"><br>
 
                 <button type="submit" name="update">Update</button>
             </form>

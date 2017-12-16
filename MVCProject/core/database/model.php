@@ -13,8 +13,7 @@ abstract class model
             echo 'failed validation';
             exit;
         }
-
-
+        
         if ($this->id != '') {
             $sql = $this->update();
         } else {
