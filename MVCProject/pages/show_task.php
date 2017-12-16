@@ -26,9 +26,7 @@ print utility\htmlTable::generateTableFromOneRecord($data);
 
 <div>
 
-    <form action="index.php?page=tasks&action=edit&id=<?php echo $data->id; ?> " method="post" id="form1">
-        <button type="submit" form="form1" value="edit">Edit Task</button>
-    </form>
+    <a href="index.php?page=tasks&action=edit">Edit Task</a>
 
     <br><br>
     <form action="index.php?page=tasks&action=delete&id=<?php echo $data->id; ?> " method="post" id="form2">

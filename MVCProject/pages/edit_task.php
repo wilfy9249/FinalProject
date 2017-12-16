@@ -19,18 +19,25 @@
 
 <body>
 
+        <div class="container">
+            <form action="index.php?page=tasks&action=edit" method="post">
 
-<form action="index.php?page=tasks&action=edit" method="post">
 
-    <label ><b>ID: <?php echo $_GET['id']; ?></b></label><br>
-    
-    Create Date: <input type="text" name="createddate"><br/>
-    Due Date: <input type="text" name="duedate"><br/>
-    Message: <input type="text" name="message"><br/>
-    Is Done: <input type="text" name="isdone"><br/><br>
 
-    <button type="submit" id="edit">Update</button>
-</form>
+                <input type="datetime" placeholder="Created Date" name="createddate"><br>
+
+
+                <input type="datetime" placeholder="Due Date" name="duedate"><br>
+
+
+                <input type="text" placeholder="Message" name="message"><br>
+
+
+                <input type="number" placeholder="Is Done" name="isdone"><br>
+
+                <button type="submit" name="update">Update</button>
+            </form>
+        </div>
 
 
 <script src="js/scripts.js"></script>

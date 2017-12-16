@@ -169,7 +169,7 @@ class routes
         $route->action = 'edit';
         $route->page = 'tasks';
         $route->controller = 'tasksController';
-        $route->method = 'editTask';
+        $route->method = 'editTasks';
         $routes[] = $route;
 
         $route = new route();
