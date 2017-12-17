@@ -21,9 +21,7 @@
 
 
 <form action="index.php?page=tasks&action=create" method="post">
-
-    Owner Email: <input type="text" name="owneremail"><br/>
-    Owner Id: <input type="text" name="ownerid"><br/>
+    
     Create Date: <input type="text" name="createddate"><br/>
     Due Date: <input type="text" name="duedate"><br/>
     Message: <input type="text" name="message"><br/>

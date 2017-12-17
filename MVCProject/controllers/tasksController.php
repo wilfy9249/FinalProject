@@ -37,7 +37,8 @@ class tasksController extends http\controller
 
     public static function insertButton()
     {
-        self::getTemplate('create_tasks');
+        $record = todos::findOne($_REQUEST['id']);
+        self::getTemplate('create_tasks',$record);
     }
 
     public static function editTasks()
@@ -50,8 +51,7 @@ class tasksController extends http\controller
     public static function edit()
     {
         $task = new todo();
-        $task->owneremail = $_POST['owneremail'];
-        $task->ownerid = $_POST['ownerid'];
+        $task->id = $_GET['id'];
         $task->createddate = $_POST['createddate'];
         $task->duedate = $_POST['duedate'];
         $task->message = $_POST['message'];
@@ -65,20 +65,22 @@ class tasksController extends http\controller
     //this would be for the post for sending the task edit form
     public static function store()
     {
+
         $task = new todo();
 
-        $task->ownerid = $_POST['owneremail'];
-        $task->ownerid = $_POST['ownerid'];
+        //$task->ownerid = $_POST['owneremail'];
+        //$task->ownerid = $_POST['ownerid'];
         $task->createddate = $_POST['createddate'];
         $task->duedate = $_POST['duedate'];
         $task->message = $_POST['message'];
         $task->isdone = $_POST['isdone'];
-
+        //$resultset = accounts::findUserbyEmail();
+        //$task->ownerid = $resultset->id;
         $task->save();
-        //print_r($task);
+        print_r($task);
         //self::getTemplate('all_tasks', $user);
 
-        header("Location: index.php?page=tasks&action=all");
+        //header("Location: index.php?page=tasks&action=all");
     }
 
     public static function save() {

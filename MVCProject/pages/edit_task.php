@@ -30,6 +30,8 @@
 
                 <input type="text" placeholder="Message" name="message"><br>
 
+                <input type="text" placeholder="IS Done" name="isdone"><br>
+
                 <button type="submit" name="update">Update</button>
             </form>
         </div>
