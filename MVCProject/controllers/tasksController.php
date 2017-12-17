@@ -15,7 +15,6 @@ class tasksController extends http\controller
 
     public static function all()
     {
-        //$records = todos::findAll();
         session_start();
            if(key_exists('userID',$_SESSION)) {
                $userID = $_SESSION['userID'];
@@ -37,8 +36,8 @@ class tasksController extends http\controller
 
     public static function insertButton()
     {
-        $record = todos::findOne($_REQUEST['id']);
-        self::getTemplate('create_tasks',$record);
+        //$record = todos::findOne($_REQUEST['id']);
+        self::getTemplate('create_tasks');
     }
 
     public static function editTasks()
@@ -65,22 +64,17 @@ class tasksController extends http\controller
     //this would be for the post for sending the task edit form
     public static function store()
     {
-
+        session_start();
         $task = new todo();
-
-        //$task->ownerid = $_POST['owneremail'];
-        //$task->ownerid = $_POST['ownerid'];
         $task->createddate = $_POST['createddate'];
         $task->duedate = $_POST['duedate'];
         $task->message = $_POST['message'];
         $task->isdone = $_POST['isdone'];
-        //$resultset = accounts::findUserbyEmail();
-        //$task->ownerid = $resultset->id;
+        $resultset = accounts::findUser($_SESSION['userID']);
+        $task->ownerid = $resultset->id;
+        $task->owneremail = $resultset->email;
         $task->save();
-        print_r($task);
-        //self::getTemplate('all_tasks', $user);
-
-        //header("Location: index.php?page=tasks&action=all");
+        header('Location: index.php?page=tasks&action=all');
     }
 
     public static function save() {

@@ -20,7 +20,7 @@
 <body>
 
 
-<form action="index.php?page=tasks&action=create" method="post">
+<form action="<?php $_SERVER['PHP_SELF'] ?>" method="POST">
     
     Create Date: <input type="text" name="createddate"><br/>
     Due Date: <input type="text" name="duedate"><br/>
@@ -29,6 +29,7 @@
 
     <button type="submit" id="create">Add</button>
 </form>
+
 
 
 <script src="js/scripts.js"></script>
