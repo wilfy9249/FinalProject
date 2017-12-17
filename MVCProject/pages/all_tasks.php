@@ -2,26 +2,17 @@
 
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-
-    <title>The HTML5 Herald</title>
-    <meta name="description" content="The HTML5 Herald">
-    <meta name="author" content="SitePoint">
-
-    <link rel="stylesheet" href="css/styles.css?v=1.0">
-
-    <!--[if lt IE 9]>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
-    <![endif]-->
+    <?php include 'headers.php';?>
 </head>
 
 <body>
 
-<h1>The list of Tasks of the user</h1>
+<h1 align="center">The list of Tasks for the user</h1>
 <br>
 
 
-<a href="index.php?page=tasks&action=create">Insert Record</a>
+<h2><a href="index.php?page=tasks&action=create">Insert Record</a></h2>
+
 
 <br><br>
 
@@ -31,8 +22,11 @@ print utility\htmlTable::genarateTableFromMultiArray($data);
 
 ?>
 
+<h2><label><a href="index.php">Logout</a></label></h2>
 
+<script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.0/jquery.validate.min.js'></script>
+<script  src="js/index.js"></script>
 
-<script src="js/scripts.js"></script>
 </body>
 </html>

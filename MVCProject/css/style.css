@@ -55,16 +55,18 @@ input:-webkit-autofill {
 input[type="checkbox"] {
   width: auto;
 }
-button {
+
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
   cursor: pointer;
-  background: #00A885;
-  width: 100%;
-  border: 0;
-  padding: 10px 15px;
-  color: #fff;
-  font-size: 20px;
-  -webkit-transition: .3s linear;
-  transition: .3s linear;
 }
 span.validate-tooltip {
   background: #D91717;
@@ -137,9 +139,9 @@ span.validate-tooltip {
 }
 .wrapper {
   width: 320px;
-  background: #fff;
+  background: #4CAF50;
   margin: 20px auto;
-  min-height: 200px;
+  min-height: 100px;
   border: 1px solid #f3f3f3;
 }
 .wrapper .inner-warpper {

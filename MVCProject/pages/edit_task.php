@@ -2,19 +2,7 @@
 
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-
-    <title>The HTML5 Herald</title>
-    <meta name="description" content="The HTML5 Herald">
-    <meta name="author" content="SitePoint">
-
-    <!--<link rel="stylesheet" href="css/styles.css?v=1.0">-->
-
-    <!--[if lt IE 9]>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <![endif]-->
+    <?php include 'headers.php';?>
 </head>
 
 <body>
@@ -22,21 +10,27 @@
         <div class="container">
             <form action="index.php?page=tasks&action=edit&id=<?php echo $data->id; ?>" method="post">
 
-                <label ><b>ID: <?php echo $_GET['id']; ?></b></label><br>
+                <div class="wrapper">
+                    <div class="inner-warpper text-center">
+                        <h2 class="title">Update a task</h2>
+                        <form action="" id="formvalidate">
 
-                <input type="datetime" placeholder="Created Date" name="createddate"><br>
 
-                <input type="datetime" placeholder="Due Date" name="duedate"><br>
+                            <label ><b>ID: <?php echo $_GET['id']; ?></b></label><br><br>
+                            <input type="text" name="createddate" placeholder="Create Date" required autofocus/><br/><br>
+                            <input type="text" name="duedate" placeholder="Due Date" required autofocus/><br/><br>
+                            <input type="text" name="message" placeholder="Message" required autofocus/><br/><br>
+                            <input type="text" name="isDone" placeholder="Is Done" required autofocus/><br/><br><br>
 
-                <input type="text" placeholder="Message" name="message"><br>
+                            <button type="submit" id="create">Update</button>
 
-                <input type="text" placeholder="IS Done" name="isdone"><br>
-
-                <button type="submit" name="update">Update</button>
+                        </form>
+                    </div>
             </form>
         </div>
 
-
-<script src="js/scripts.js"></script>
+        <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.0/jquery.validate.min.js'></script>
+        <script src="js/scripts.js"></script>
 </body>
 </html>

@@ -2,20 +2,14 @@
 
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-
-    <title>The HTML5 Herald</title>
-    <meta name="description" content="The HTML5 Herald">
-    <meta name="author" content="SitePoint">
-
-    <link rel="stylesheet" href="css/styles.css?v=1.0">
-
-    <!--[if lt IE 9]>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
-    <![endif]-->
+    <?php include 'headers.php';?>
 </head>
 
 <body>
+
+<h1 align="left">The Task for the user</h1>
+<br>
+
 
 <?php
 //this is how you print something  $data contains the record that was selected on the table.
@@ -24,21 +18,23 @@ print utility\htmlTable::generateTableFromOneRecord($data);
 
 ?>
 
-<div>
+<div class="wrapper">
 
-    <a href="index.php?page=tasks&action=edit&id=<?php echo $data->id; ?>">Edit Task</a>
+        <h2><a href="index.php?page=tasks&action=edit&id=<?php echo $data->id; ?>">Update Task</a></h2>
 
-    <br><br>
-    <form action="index.php?page=tasks&action=delete&id=<?php echo $data->id; ?> " method="post" id="form2">
+        <br>
+
+        <form action="index.php?page=tasks&action=delete&id=<?php echo $data->id; ?> " method="post" id="form2">
         <button type="submit" form="form2" value="delete">Delete Task</button>
-    </form>
+        </form>
 
-</div>
+        <br>
 
+        <h2><label><a href="index.php">Logout</a></label>
 
+<script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.0/jquery.validate.min.js'></script>
+<script  src="js/index.js"></script>
 
-
-
-<script src="js/scripts.js"></script>
 </body>
 </html>
