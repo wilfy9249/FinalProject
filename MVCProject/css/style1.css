@@ -85,7 +85,7 @@ form input[type="submit"] {
 }
 
 body {
-  background: #333;
+  background: #f2f2f2;
   font-family: 'PT Sans', sans-serif;
   padding: 20px;
 }
@@ -94,3 +94,4 @@ body {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
+
