@@ -24,7 +24,10 @@
                             <label><b>Message:</b></label><br>
                             <input type="text" name="message" placeholder="" required autofocus/><br/><br>
                             <label><b>IS Done:</b></label><br>
-                            <input type="text" name="isDone" placeholder="" required autofocus/><br/><br><br>
+                            <select>
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                            </select><br><br><br>
 
                             <button type="submit" id="create">Update</button>
 

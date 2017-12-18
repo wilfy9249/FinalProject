@@ -12,8 +12,7 @@
 
 
 <h2><a href="index.php?page=tasks&action=create">Insert Record</a></h2>
-&nbsp;&nbsp;&nbsp;
-<h2><a href="index.php?page=accounts&action=edit&id=<?php echo $data->id; ?>">My Profile</a></h2>
+
 
 <br><br>
 

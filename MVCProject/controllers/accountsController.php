@@ -76,9 +76,15 @@ class accountsController extends http\controller
 
     public static function edit()
     {
-        $record = accounts::findOne($_REQUEST['id']);
+        $profile = new account();
+        $profile->id = $_GET['id'];
+        $profile->fname = $_POST['fname'];
+        $profile->lname = $_POST['lname'];
+        //$profile->password = $_POST['password'];
+        $profile->save();
+        //self::getTemplate('all_tasks', $user);
 
-        self::getTemplate('edit_account', $record);
+        header("Location: index.php?page=tasks&action=show");
 
     }
 
@@ -86,6 +92,13 @@ class accountsController extends http\controller
     {
         $record = accounts::findOne($_REQUEST['id']);
         self::getTemplate('show_profile', $record);
+
+    }
+
+    public static function editProfile()
+    {
+        $record = accounts::findOne($_REQUEST['id']);
+        self::getTemplate('edit_account', $record);
 
     }
 

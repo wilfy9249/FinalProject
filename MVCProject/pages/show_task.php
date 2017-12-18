@@ -18,8 +18,6 @@ print utility\htmlTable::generateTableFromOneRecord($data);
 
 ?>
 
-<div class="wrapper">
-
         <h2><a href="index.php?page=tasks&action=edit&id=<?php echo $data->id; ?>">Update Task</a></h2>
 
         <br>
@@ -29,6 +27,8 @@ print utility\htmlTable::generateTableFromOneRecord($data);
         </form>
 
         <br>
+
+        <h2><a href="index.php?page=accounts&action=showProfile&id=<?php echo $data->id; ?>">My Profile</a></h2>
 
         <h2><label><a href="index.php">Logout</a></label>
 
