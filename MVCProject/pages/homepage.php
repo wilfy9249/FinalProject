@@ -17,12 +17,12 @@
             <form action="" id="formvalidate">
                 <div class="input-group">
                     <label class="palceholder" for="userName" >User Name</label>
-                    <input class="form-control" name="email" id="userName" type="text" placeholder="" />
+                    <input class="form-control" name="email" id="userName" type="email" placeholder="" required="" />
                     <span class="lighting"></span>
                 </div>
                 <div class="input-group">
                     <label class="palceholder" for="userPassword">Password</label>
-                    <input class="form-control" name="password" id="userPassword" type="password" placeholder="" />
+                    <input class="form-control" name="password" id="userPassword" type="password" placeholder="" required=""/>
                     <span class="lighting"></span>
                 </div>
 

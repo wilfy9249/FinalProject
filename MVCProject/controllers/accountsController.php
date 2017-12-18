@@ -81,7 +81,15 @@ class accountsController extends http\controller
         self::getTemplate('edit_account', $record);
 
     }
-//this is used to save the update form data
+
+    public static function showProfile()
+    {
+        $record = accounts::findOne($_REQUEST['id']);
+        self::getTemplate('show_profile', $record);
+
+    }
+
+    //this is used to save the update form data
     public static function save() {
         $user = accounts::findOne($_REQUEST['id']);
 

@@ -15,10 +15,14 @@
             <form action="" id="formvalidate">
 
 
-                <input type="text" name="createddate" placeholder="Create Date" required autofocus/><br/><br>
-                <input type="text" name="duedate" placeholder="Due Date" required autofocus/><br/><br>
-                <input type="text" name="message" placeholder="Message" required autofocus/><br/><br>
-                <input type="text" name="isDone" placeholder="Is Done" required autofocus/><br/><br><br>
+                <label><b>Create Date:</b></label><br>
+                <input type="date" name="createddate" placeholder="" required autofocus/><br/><br>
+                <label><b>Due Date:</b></label><br>
+                <input type="date" name="duedate" placeholder="" required autofocus/><br/><br>
+                <label><b>Message:</b></label><br>
+                <input type="text" name="message" placeholder="" required autofocus/><br/><br>
+                <label><b>IS Done:</b></label><br>
+                <input type="text" name="isDone" placeholder="" required autofocus/><br/><br><br>
 
                 <button type="submit" id="create">Add</button>
 

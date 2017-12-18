@@ -36,7 +36,6 @@ class tasksController extends http\controller
 
     public static function insertButton()
     {
-        //$record = todos::findOne($_REQUEST['id']);
         self::getTemplate('create_tasks');
     }
 

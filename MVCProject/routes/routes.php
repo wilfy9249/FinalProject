@@ -168,10 +168,6 @@ class routes
         $route->method = 'store';
         $routes[] = $route;
 
-
-
-
-
         $route = new route();
         $route->http_method = 'GET';
         $route->action = 'edit';
@@ -186,6 +182,14 @@ class routes
         $route->page = 'tasks';
         $route->controller = 'tasksController';
         $route->method = 'edit';
+        $routes[] = $route;
+
+        $route = new route();
+        $route->http_method = 'GET';
+        $route->action = 'showProfile';
+        $route->page = 'accounts';
+        $route->controller = 'accountsController';
+        $route->method = 'showProfile';
         $routes[] = $route;
 
         return $routes;
