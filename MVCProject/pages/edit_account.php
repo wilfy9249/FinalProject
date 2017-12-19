@@ -1,9 +1,5 @@
-<!doctype html>
 
-<html lang="en">
-<head>
-    <?php include 'headers.php';?>
-</head>
+<?php include 'headers.php';?>
 
 <body>
 
@@ -18,20 +14,26 @@
 
                     <label ><b>ID: <?php echo $_GET['id']; ?></b></label><br><br>
                     <label><b>First Name:</b></label><br>
-                    <input type="text" name="fname" placeholder="" required autofocus/><br/><br>
+                    <input type="text" name="fname" placeholder="<?php echo $data->fname; ?>"/><br/><br>
                     <label><b>Last Name:</b></label><br>
-                    <input type="text" name="lname" placeholder="" required autofocus/><br/><br>
+                    <input type="text" name="lname" placeholder="<?php echo $data->lname; ?>" /><br/><br>
+                    <label><b>Email Address:</b></label><br>
+                    <input type="email" name="email" placeholder="<?php echo $data->email; ?>" required/><br/><br>
+                    <label><b>Contact No:</b></label><br>
+                    <input type="text" name="contactNo" placeholder="<?php echo $data->phone; ?>" /><br/><br>
+                    <label><b>BirthDate:</b></label><br>
+                    <input type="text" name="birthdate" placeholder="<?php echo $data->birthday; ?>" /><br/><br>
+                    <label><b>Gender:</b></label><br>
+                    <input type="text" name="gender" placeholder="<?php echo $data->gender; ?>" /><br/><br>
+                    <label><b>Password</b></label><br>
+                    <input type="password" name="password" placeholder=" " required /><br/><br>
 
-                    <button type="submit" id="create">Edit</button>
+                    <button type="submit" id="edit">Edit</button>
 
                 </form>
             </div>
     </form>
 </div>
 
-<script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.0/jquery.validate.min.js'></script>
-<script src="js/scripts.js"></script>
-</body>
-</html>
+<?php include 'footer.php';?>
 

@@ -1,9 +1,5 @@
-<!doctype html>
 
-<html lang="en">
-<head>
     <?php include 'headers.php';?>
-</head>
 
 <body>
 
@@ -28,13 +24,8 @@ print utility\htmlTable::generateTableFromOneRecord($data);
 
         <br>
 
-        <h2><a href="index.php?page=accounts&action=showProfile&id=<?php echo $data->id; ?>">My Profile</a></h2>
+        <h2><a href="index.php?page=accounts&action=showProfile&id=<?php echo $data->ownerid; ?> ">My Profile</a></h2>
 
         <h2><label><a href="index.php">Logout</a></label>
 
-<script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.0/jquery.validate.min.js'></script>
-<script  src="js/index.js"></script>
-
-</body>
-</html>
+    <?php include 'footer.php';?>

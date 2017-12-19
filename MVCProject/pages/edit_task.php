@@ -1,9 +1,5 @@
-<!doctype html>
 
-<html lang="en">
-<head>
     <?php include 'headers.php';?>
-</head>
 
 <body>
 
@@ -18,16 +14,17 @@
 
                             <label ><b>ID: <?php echo $_GET['id']; ?></b></label><br><br>
                             <label><b>Create Date:</b></label><br>
-                            <input type="date" name="createddate" placeholder="" required autofocus/><br/><br>
+                            <input type="text" name="createddate" placeholder="<?php echo $data->createddate;?>" /><br/><br>
                             <label><b>Due Date:</b></label><br>
-                            <input type="date" name="duedate" placeholder="" required autofocus/><br/><br>
+                            <input type="text" name="duedate" placeholder="<?php echo $data->duedate;?>" /><br/><br>
                             <label><b>Message:</b></label><br>
-                            <input type="text" name="message" placeholder="" required autofocus/><br/><br>
+                            <input type="text" name="message" placeholder="<?php echo $data->message;?>" /><br/><br>
                             <label><b>IS Done:</b></label><br>
-                            <select>
+                            <input type="text" name="isdone" placeholder="<?php echo $data->isdone;?>" /><br/><br>
+                            <!--<select>
                                 <option value="0">0</option>
                                 <option value="1">1</option>
-                            </select><br><br><br>
+                            </select><br><br><br>-->
 
                             <button type="submit" id="create">Update</button>
 
@@ -36,8 +33,4 @@
             </form>
         </div>
 
-        <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
-        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.0/jquery.validate.min.js'></script>
-        <script src="js/scripts.js"></script>
-</body>
-</html>
+        <?php include 'footer.php';?>

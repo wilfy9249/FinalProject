@@ -5,16 +5,14 @@ namespace http;
 class request
 {
 
-
-//this gets the request method to make it easier to use
+    //this gets the request method to make it easier to use
     static public function getRequestMethod()
     {
         $request_method = $_SERVER['REQUEST_METHOD'];
         return $request_method;
     }
 
-//this gets determines the page
-
+    //this gets determines the page
     static public function getPage()
     {
 //this sets the default page for the app to index
@@ -27,19 +25,16 @@ class request
         return $page;
     }
 
-//this gets the action out of the URL
+    //this gets the action out of the URL
     static public function getAction()
     {
 
 //this is a litte code to help the homepage handle post requests if needed
         if (self::getRequestMethod() == 'POST') {
             $action = 'create';
-
-
         } else {
             $action = 'show';
         }
-
 
         if (!empty($_GET['action'])) {
             $action = $_GET['action'];

@@ -8,10 +8,9 @@ abstract class model
 
     public function save()
     {
-
         if($this->validate() == FALSE) {
-            echo 'failed validation';
-            exit;
+           echo 'failed validation';
+           exit;
         }
 
         if ($this->id != '') {
@@ -63,7 +62,6 @@ abstract class model
 
     private function update()
     {
-
         $modelName = static::$modelName;
         $tableName = $modelName::getTablename();
         $array = get_object_vars($this);
@@ -71,7 +69,12 @@ abstract class model
         $comma = " ";
         $sql = 'UPDATE ' . $tableName . ' SET ';
         foreach ($array as $key => $value) {
-            if(isset($value)){
+            echo 'key is: '.$key;
+            echo 'value is: '.$value;
+            //to fix error to save 0 isdone value
+            //if (!empty($value))
+            if(isset($value))
+            {
                 $sql .= $comma . $key . ' = "' . $value . '"';
                 $comma = ", ";
             }

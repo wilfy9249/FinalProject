@@ -1,19 +1,13 @@
 <?php
 
-
 //each page extends controller and the index.php?page=tasks causes the controller to be called
 class accountsController extends http\controller
 {
-
-    //each method in the controller is named an action.
-    //to call the show function the url is index.php?page=task&action=show
     public static function show()
     {
         $record = accounts::findOne($_REQUEST['id']);
         self::getTemplate('show_account', $record);
     }
-
-    //to call the show function the url is index.php?page=accounts&action=all
 
     public static function all()
     {
@@ -22,12 +16,7 @@ class accountsController extends http\controller
         self::getTemplate('all_accounts', $records);
 
     }
-    //to call the show function the url is called with a post to: index.php?page=task&action=create
-    //this is a function to create new tasks
 
-    //you should check the notes on the project posted in moodle for how to use active record here
-
-    //this is to register an account i.e. insert a new account
     public static function register()
     {
         //https://www.sitepoint.com/why-you-should-use-bcrypt-to-hash-stored-passwords/
@@ -35,7 +24,6 @@ class accountsController extends http\controller
         self::getTemplate('register');
     }
 
-    //this is the function to save the user the new user for registration
     public static function store()
 
     {
@@ -80,11 +68,15 @@ class accountsController extends http\controller
         $profile->id = $_GET['id'];
         $profile->fname = $_POST['fname'];
         $profile->lname = $_POST['lname'];
-        //$profile->password = $_POST['password'];
+        $profile->email = $_POST['email'];
+        $profile->phone = $_POST['phone'];
+        $profile->birthday = $_POST['birthday'];
+        $profile->gender = $_POST['gender'];
+        $profile->password = $_POST['password'];
         $profile->save();
         //self::getTemplate('all_tasks', $user);
 
-        header("Location: index.php?page=tasks&action=show");
+        header("Location: index.php?page=accounts&action=showProfile");
 
     }
 
@@ -92,14 +84,12 @@ class accountsController extends http\controller
     {
         $record = accounts::findOne($_REQUEST['id']);
         self::getTemplate('show_profile', $record);
-
     }
 
     public static function editProfile()
     {
         $record = accounts::findOne($_REQUEST['id']);
         self::getTemplate('edit_account', $record);
-
     }
 
     //this is used to save the update form data
@@ -113,7 +103,7 @@ class accountsController extends http\controller
         $user->birthday = $_POST['birthday'];
         $user->gender = $_POST['gender'];
         $user->save();
-        header("Location: index.php?page=accounts&action=all");
+        header("Location: index.php?page=tasks&action=all");
 
     }
 

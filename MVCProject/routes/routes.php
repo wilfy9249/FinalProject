@@ -25,19 +25,6 @@ class routes
         //this adds the route to the routes array.
         $routes[] = $route;
 
-        //this is the index.php route for POST
-
-        //This is an examole of the post for index
-        //$route = new route();
-        //$route->http_method = 'POST';
-        //$route->action = 'create';
-        //$route->page = 'homepage';
-        //$route->controller = 'homepageController';
-        //$route->method = 'create';
-        //$routes[] = $route;
-
-        //This is an examole of the post for tasks to show a task
-        //GET METHOD index.php?page=tasks&action=show
         $route = new route();
         $route->http_method = 'GET';
         $route->action = 'show';
@@ -46,10 +33,6 @@ class routes
         $route->method = 'show';
         $routes[] = $route;
 
-        //This is an examole of the post for tasks to list tasks.  See the action matches the method name.
-        //you need to add routes for create, edit, and delete
-        //GET METHOD index.php?page=tasks&action=all
-
         $route = new route();
         $route->http_method = 'GET';
         $route->action = 'all';
@@ -57,8 +40,6 @@ class routes
         $route->controller = 'tasksController';
         $route->method = 'all';
         $routes[] = $route;
-        //GET METHOD index.php?page=accounts&action=all
-//https://web.njit.edu/~kwilliam/mvc/index.php?page=accounts&action=all
 
         $route = new route();
         $route->http_method = 'GET';
@@ -67,7 +48,6 @@ class routes
         $route->controller = 'accountsController';
         $route->method = 'all';
         $routes[] = $route;
-        //GET METHOD index.php?page=accounts&action=show
 
         $route = new route();
         $route->http_method = 'GET';
@@ -77,7 +57,7 @@ class routes
         $route->method = 'show';
         $routes[] = $route;
 
-        //YOU WILL NEED TO ADD MORE ROUTES
+        //DELETE
 
         $route = new route();
         $route->http_method = 'POST';
@@ -121,9 +101,7 @@ class routes
         $route->method = 'store';
         $routes[] = $route;
 
-        //This goes in the login form action method
-        //GET METHOD index.php?page=accounts&action=login
-
+        //LOGIN
         $route = new route();
         $route->http_method = 'GET';
         $route->action = 'login';
@@ -140,10 +118,7 @@ class routes
         $route->method = 'login';
         $routes[] = $route;
 
-
-
-
-
+        //INSERT
         $route = new route();
         $route->http_method = 'GET';
         $route->action = 'create';
@@ -160,6 +135,7 @@ class routes
         $route->method = 'store';
         $routes[] = $route;
 
+        //UPDATE
         $route = new route();
         $route->http_method = 'GET';
         $route->action = 'edit';
@@ -176,6 +152,7 @@ class routes
         $route->method = 'edit';
         $routes[] = $route;
 
+        //show profile
         $route = new route();
         $route->http_method = 'GET';
         $route->action = 'showProfile';
@@ -197,7 +174,7 @@ class routes
         $route->action = 'edit';
         $route->page = 'accounts';
         $route->controller = 'accountsController';
-        $route->method = 'edit';
+        $route->method = 'save';
         $routes[] = $route;
 
         return $routes;
@@ -212,8 +189,6 @@ class routes
         $route->method = $method;
     }
 }
-
-//this is the route prototype object  you would make a factory to return this
 
 class route
 {
